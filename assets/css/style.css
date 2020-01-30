@@ -1,0 +1,17 @@
+.tasks {
+    height: 100px;
+    background-color: #77DD77;
+    border-radius: 10px;
+};
+
+.time {
+    font-size: 50px;
+};
+
+.button {
+    border-radius: 0px 10px 10px 0px !important; 
+};
+
+#header {
+    font-size: 50px    !important;
+};
