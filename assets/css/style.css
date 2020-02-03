@@ -28,6 +28,7 @@ textarea {
 .time-block {
   text-align: center;
   border-radius: 15px;
+  font-size: ;
 }
 
 .row {
@@ -40,7 +41,7 @@ textarea {
   background-color: #ffffff;
   color: #000000;
   border-top: 1px dashed #000000;
-  font-size: larger;
+  font-size: 24px;
   width: 5rem;
 }
 
@@ -71,7 +72,6 @@ textarea {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
 }
-
 input {
   width: 60rem;
 }
