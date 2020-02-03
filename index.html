@@ -1,118 +1,121 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="./assets/css/style.css">
-
-    <title>Day Planner</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Work Day Scheduler</title>
   </head>
+
   <body>
-
-    <header class="jumbotron my-auto text-center">
-        <h1 id="header">Work Day Scheduler</h1>
-        <p>A simple calander app for scheduling your work day</p>
-        <p id="currentDay">Current Date Will Go Here</p>
+    <header class="jumbotron">
+      <h1 class="display-3">Work Day Scheduler</h1>
+      <p class="lead">A simple calendar app for scheduling your work day</p>
+      <p id="currentDay" class="lead"></p>
     </header>
-
     <div class="container">
-      <!-- row 1 -->
+      <!-- Timeblocks go here -->
       <div class="row">
-        <div class="col-1 m-1 my-auto time">
-          9AM
-        </div>
-        <div class="col-9 m-1 tasks"></div>
-        <div class="col-1 m-1 btn-primary button">button</div>
+        <h1 class="hour">9AM</h1>
+        <input class="time-block future" id="9AM" /><button
+          class="saveBtn"
+          id="9save"
+        >
+          Save
+        </button>
       </div>
-        <!-- row 2 -->
-        <div class="row">
-          <div class="col-1 m-1 my-auto  time">
-            10AM
-          </div>
-          <div class="col-9 m-1 tasks"></div>
-          <div class="col-1 m-1 btn-primary"></div>
-        </div>
-
-          <!-- row 3 -->
       <div class="row">
-        <div class="col-1 m-1 my-auto  time">
-          11AM
-        </div>
-        <div class="col-9 m-1 tasks"></div>
-        <div class="col-1 m-1 btn-primary"></div>
+        <h1 class="hour">10AM</h1>
+        <input class="time-block future" id="10AM" /><button
+          class="saveBtn"
+          id="10save"
+        >
+          Save
+        </button>
       </div>
-
-        <!-- row 4 -->
-        <div class="row">
-          <div class="col-1 m-1 my-auto time">
-            12AM
-          </div>
-          <div class="col-9 m-1 tasks"></div>
-          <div class="col-1 m-1 btn-primary"></div>
-        </div>
-
-          <!-- row 5 -->
       <div class="row">
-        <div class="col-1 m-1 my-auto  time">
-          1PM
-        </div>
-        <div class="col-9 m-1 tasks"></div>
-        <div class="col-1 m-1 btn-primary"></div>
+        <h1 class="hour">11AM</h1>
+        <input class="time-block future" id="11AM" /><button
+          class="saveBtn"
+          id="11save"
+        >
+          Save
+        </button>
       </div>
-
-        <!-- row 6 -->
-        <div class="row">
-          <div class="col-1 m-1 my-auto time">
-            2PM
-          </div>
-          <div class="col-9 m-1 tasks"></div>
-          <div class="col-1 m-1 btn-primary"></div>
-        </div>
-
-          <!-- row 7 -->
       <div class="row">
-        <div class="col-1 m-1 my-auto time">
-          3PM
-        </div>
-        <div class="col-9 m-1 tasks"></div>
-        <div class="col-1 m-1 btn-primary"></div>
+        <h1 class="hour">12PM</h1>
+        <input class="time-block future" id="12PM" /><button
+          class="saveBtn"
+          id="12save"
+        >
+          Save
+        </button>
       </div>
-
-        <!-- row 8 -->
-        <div class="row">
-          <div class="col-1 m-1 my-auto time">
-            4PM
-          </div>
-          <div class="col-9 m-1 tasks"></div>
-          <div class="col-1 m-1 btn-primary "></div>
-        </div>
-
-          <!-- row 9 -->
       <div class="row">
-        <div class="col-1 m-1 my-auto time">
-          5PM
-        </div>
-        <div class="col-9 m-1 tasks"></div>
-        <div class="col-1 m-1 btn-primary"></div>
+        <h1 class="hour">1PM</h1>
+        <input class="time-block future" id="1PM" /><button
+          class="saveBtn"
+          id="1save"
+        >
+          Save
+        </button>
       </div>
-
-
-
+      <div class="row">
+        <h1 class="hour">2PM</h1>
+        <input class="time-block future" id="2PM" /><button
+          class="saveBtn"
+          id="2save"
+        >
+          Save
+        </button>
+      </div>
+      <div class="row">
+        <h1 class="hour">3PM</h1>
+        <input class="time-block future" id="3PM" /><button
+          class="saveBtn"
+          id="3save"
+        >
+          Save
+        </button>
+      </div>
+      <div class="row">
+        <h1 class="hour">4PM</h1>
+        <input class="time-block future" id="4PM" /><button
+          class="saveBtn"
+          id="4save"
+        >
+          Save
+        </button>
+      </div>
+      <div class="row">
+        <h1 class="hour">5PM</h1>
+        <input class="time-block future" id="5PM" /><button
+          class="saveBtn"
+          id="5save"
+        >
+          Save
+        </button>
+      </div>
     </div>
 
-
-   
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="lib/moment/moment.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="assets/javascript/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   </body>
-
 </html>
