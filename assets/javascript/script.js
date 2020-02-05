@@ -1,75 +1,243 @@
-// get time elements
+//input class elements
 
-var nineEL = document.getElementById("9AM");
-var nineEL = document.getElementById("10AM");
-var nineEL = document.getElementById("11AM");
-var nineEL = document.getElementById("12PM");
-var nineEL = document.getElementById("1PM");
-var nineEL = document.getElementById("2PM");
-var nineEL = document.getElementById("3PM");
-var nineEL = document.getElementById("4PM");
-var nineEL = document.getElementById("5PM");
+var nineEL = document.getElementById(`9AM`);
+var tenEL = document.getElementById(`10AM`);
+var elevenEL = document.getElementById(`11AM`);
+var twelveEL = document.getElementById(`12PM`);
+var oneEL = document.getElementById(`1PM`);
+var twoEL = document.getElementById(`2PM`);
+var threeEL = document.getElementById(`3PM`);
+var fourEL = document.getElementById(`4PM`);
+var fiveEL = document.getElementById(`5PM`);
 
-// save slot variables
+//save button elements
 
-var nineSaveEl = docuement.getElementById("9save");
-var nineSaveEl = docuement.getElementById("10save");
-var nineSaveEl = docuement.getElementById("11save");
-var nineSaveEl = docuement.getElementById("12save");
-var nineSaveEl = docuement.getElementById("1save");
-var nineSaveEl = docuement.getElementById("2save");
-var nineSaveEl = docuement.getElementById("3save");
-var nineSaveEl = docuement.getElementById("4save");
-var nineSaveEl = docuement.getElementById("5save");
+var nineSaveEl = document.getElementById(`9save`);
+var tenSaveEl = document.getElementById(`10save`);
+var elevenSaveEl = document.getElementById(`11save`);
+var twelveSaveEl = document.getElementById(`12save`);
+var oneSaveEl = document.getElementById(`1save`);
+var twoSaveEl = document.getElementById(`2save`);
+var threeSaveEl = document.getElementById(`3save`);
+var fourSaveEl = document.getElementById(`4save`);
+var fiveSaveEl = document.getElementById(`5save`);
 
 //setting current date to show
 $(`#currentDay`).text(moment().format("MMMM Do YYYY, h:mm a"));
 
-//setting schedule values
-nineEL.value = localStorage.getItem("nine");
-tenEl.value = localStorage.getItem("ten");
-elevenEl.value = localStorage.getItem("eleven");
-twelveEl.value = localStorage.getItem("twelve");
-oneEl.value = localStorage.getItem("one");
-twoEl.value = localStorage.getItem("two");
-threeEl.value = localStorage.getItem("three");
-fourEl.value = localStorage.getItem("four");
-fiveEl.value = localStorage.getItem("five");
+//setting the schedule values
 
-//when button is clicked save to local storage
+nineEL.value = localStorage.getItem(`nine`);
+tenEL.value = localStorage.getItem(`ten`);
+elevenEL.value = localStorage.getItem(`eleven`);
+twelveEL.value = localStorage.getItem(`twelve`);
+oneEL.value = localStorage.getItem(`one`);
+twoEL.value = localStorage.getItem(`two`);
+threeEL.value = localStorage.getItem(`three`);
+fourEL.value = localStorage.getItem(`four`);
+fiveEL.value = localStorage.getItem(`five`);
 
-nineSaveEl.addEventListener("click", function() {
-  localStorage.setItem("nine", nineEl.value);
+//making buttons save to local storage
+
+nineSaveEl.addEventListener(`click`, function() {
+  localStorage.setItem(`nine`, nineEL.value);
 });
 
-tenSaveEl.addEventListener("click", function() {
-  localStorage.setItem("ten", tenEl.value);
+tenSaveEl.addEventListener(`click`, function() {
+  localStorage.setItem(`ten`, tenEL.value);
 });
 
-elevenSaveEl.addEventListener("click", function() {
-  localStorage.setItem("eleven", elevenEl.value);
+elevenSaveEl.addEventListener(`click`, function() {
+  localStorage.setItem(`eleven`, elevenEL.value);
 });
 
-twelveSaveEl.addEventListener("click", function() {
-  localStorage.setItem("twelve", twelveEl.value);
+twelveSaveEl.addEventListener(`click`, function() {
+  localStorage.setItem(`twelve`, twelveEL.value);
 });
 
-oneSaveEl.addEventListener("click", function() {
-  localStorage.setItem("one", oneEl.value);
+oneSaveEl.addEventListener(`click`, function() {
+  localStorage.setItem(`one`, oneEL.value);
 });
 
-twoSaveEl.addEventListener("click", function() {
-  localStorage.setItem("two", twoEl.value);
+twoSaveEl.addEventListener(`click`, function() {
+  localStorage.setItem(`two`, twoEL.value);
 });
 
-threeSaveEl.addEventListener("click", function() {
-  localStorage.setItem("three", threeEl.value);
+threeSaveEl.addEventListener(`click`, function() {
+  localStorage.setItem(`three`, threeEL.value);
 });
 
-fourSaveEl.addEventListener("click", function() {
-  localStorage.setItem("four", fourEl.value);
+fourSaveEl.addEventListener(`click`, function() {
+  localStorage.setItem(`four`, fourEL.value);
 });
 
-fiveSaveEl.addEventListener("click", function() {
-  localStorage.setItem("five", fiveEl.value);
+fiveSaveEl.addEventListener(`click`, function() {
+  localStorage.setItem(`five`, fiveEL.value);
 });
+
+//making colours change depending on time
+
+if (moment().hour() < 9) {
+  nineEL.classList.add(`future`);
+  tenEL.classList.add(`future`);
+  elevenEL.classList.add(`future`);
+  twelveEL.classList.add(`future`);
+  oneEL.classList.add(`future`);
+  twoEL.classList.add(`future`);
+  threeEL.classList.add(`future`);
+  fourEL.classList.add(`future`);
+  fiveEL.classList.add(`future`);
+} else if (moment().hour() == 9) {
+  nineEL.classList.add(`present`);
+  tenEL.classList.add(`future`);
+  elevenEL.classList.add(`future`);
+  twelveEL.classList.add(`future`);
+  oneEL.classList.add(`future`);
+  twoEL.classList.add(`future`);
+  threeEL.classList.add(`future`);
+  fourEL.classList.add(`future`);
+  fiveEL.classList.add(`future`);
+} else if (moment().hour() == 10) {
+  nineEL.classList.add(`past`);
+  nineEL.classList.remove(`future`);
+  tenEL.classList.add(`present`);
+  tenEL.classList.remove(`future`);
+  elevenEL.classList.add(`future`);
+  twelveEL.classList.add(`future`);
+  oneEL.classList.add(`future`);
+  twoEL.classList.add(`future`);
+  threeEL.classList.add(`future`);
+  fourEL.classList.add(`future`);
+  fiveEL.classList.add(`future`);
+} else if (moment().hour() == 11) {
+  nineEL.classList.add(`past`);
+  nineEL.classList.remove(`future`);
+  tenEL.classList.add(`past`);
+  tenEL.classList.remove(`future`);
+  elevenEL.classList.add(`present`);
+  elevenEL.classList.remove(`future`);
+  twelveEL.classList.add(`future`);
+  oneEL.classList.add(`future`);
+  twoEL.classList.add(`future`);
+  threeEL.classList.add(`future`);
+  fourEL.classList.add(`future`);
+  fiveEL.classList.add(`future`);
+} else if (moment().hour() == 12) {
+  nineEL.classList.add(`past`);
+  nineEL.classList.remove(`future`);
+  tenEL.classList.add(`past`);
+  tenEL.classList.remove(`future`);
+  elevenEL.classList.add(`past`);
+  elevenEL.classList.remove(`future`);
+  twelveEL.classList.add(`present`);
+  twelveEL.classList.remove(`future`);
+  oneEL.classList.add(`future`);
+  twoEL.classList.add(`future`);
+  threeEL.classList.add(`future`);
+  fourEL.classList.add(`future`);
+  fiveEL.classList.add(`future`);
+} else if (moment().hour() == 13) {
+  nineEL.classList.add(`past`);
+  nineEL.classList.remove(`future`);
+  tenEL.classList.add(`past`);
+  tenEL.classList.remove(`future`);
+  elevenEL.classList.add(`past`);
+  elevenEL.classList.remove(`future`);
+  twelveEL.classList.add(`past`);
+  twelveEL.classList.remove(`future`);
+  oneEL.classList.add(`present`);
+  oneEL.classList.remove(`future`);
+  twoEL.classList.add(`future`);
+  threeEL.classList.add(`future`);
+  fourEL.classList.add(`future`);
+  fiveEL.classList.add(`future`);
+} else if (moment().hour() == 14) {
+  nineEL.classList.add(`past`);
+  nineEL.classList.remove(`future`);
+  tenEL.classList.add(`past`);
+  tenEL.classList.remove(`future`);
+  elevenEL.classList.add(`past`);
+  elevenEL.classList.remove(`future`);
+  twelveEL.classList.add(`past`);
+  twelveEL.classList.remove(`future`);
+  oneEL.classList.add(`past`);
+  oneEL.classList.remove(`future`);
+  twoEL.classList.add(`present`);
+  twoEL.classList.remove(`future`);
+  threeEL.classList.add(`future`);
+  fourEL.classList.add(`future`);
+  fiveEL.classList.add(`future`);
+} else if (moment().hour() == 15) {
+  nineEL.classList.add(`past`);
+  nineEL.classList.remove(`future`);
+  tenEL.classList.add(`past`);
+  tenEL.classList.remove(`future`);
+  elevenEL.classList.add(`past`);
+  elevenEL.classList.remove(`future`);
+  twelveEL.classList.add(`past`);
+  twelveEL.classList.remove(`future`);
+  oneEL.classList.add(`past`);
+  oneEL.classList.remove(`future`);
+  twoEL.classList.add(`past`);
+  twoEL.classList.remove(`future`);
+  threeEL.classList.add(`present`);
+  threeEL.classList.remove(`future`);
+  fourEL.classList.add(`future`);
+  fiveEL.classList.add(`future`);
+} else if (moment().hour() == 16) {
+  nineEL.classList.add(`past`);
+  nineEL.classList.remove(`future`);
+  tenEL.classList.add(`past`);
+  tenEL.classList.remove(`future`);
+  elevenEL.classList.add(`past`);
+  elevenEL.classList.remove(`future`);
+  twelveEL.classList.add(`past`);
+  twelveEL.classList.remove(`future`);
+  oneEL.classList.add(`past`);
+  oneEL.classList.remove(`future`);
+  twoEL.classList.add(`past`);
+  twoEL.classList.remove(`future`);
+  threeEL.classList.add(`past`);
+  threeEL.classList.remove(`future`);
+  fourEL.classList.add(`present`);
+  fourEL.classList.remove(`future`);
+  fiveEL.classList.add(`future`);
+} else if (moment().hour() == 17) {
+  nineEL.classList.add(`past`);
+  nineEL.classList.remove(`future`);
+  tenEL.classList.add(`past`);
+  tenEL.classList.remove(`future`);
+  elevenEL.classList.add(`past`);
+  elevenEL.classList.remove(`future`);
+  twelveEL.classList.add(`past`);
+  twelveEL.classList.remove(`future`);
+  oneEL.classList.add(`past`);
+  oneEL.classList.remove(`future`);
+  twoEL.classList.add(`past`);
+  twoEL.classList.remove(`future`);
+  threeEL.classList.add(`past`);
+  threeEL.classList.remove(`future`);
+  fourEL.classList.add(`past`);
+  fourEL.classList.remove(`future`);
+  fiveEL.classList.add(`present`);
+  fiveEL.classList.remove(`future`);
+} else {
+  nineEL.classList.add(`past`);
+  nineEL.classList.remove(`future`);
+  tenEL.classList.add(`past`);
+  tenEL.classList.remove(`future`);
+  elevenEL.classList.add(`past`);
+  elevenEL.classList.remove(`future`);
+  twelveEL.classList.add(`past`);
+  twelveEL.classList.remove(`future`);
+  oneEL.classList.add(`past`);
+  oneEL.classList.remove(`future`);
+  twoEL.classList.add(`past`);
+  twoEL.classList.remove(`future`);
+  threeEL.classList.add(`past`);
+  threeEL.classList.remove(`future`);
+  fourEL.classList.add(`past`);
+  fourEL.classList.remove(`future`);
+  fiveEL.classList.add(`past`);
+  fiveEL.classList.remove(`future`);
+}
