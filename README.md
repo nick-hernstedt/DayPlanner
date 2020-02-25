@@ -10,10 +10,11 @@ Just a simple day planner. It does the following:
 - saves data to local storage allowing the user to go back to the website and see the infomation later
 
 ## Technologies
-HTML
-CSS 
-JavaScript
-Bootstrap 4
+- Responsive Design
+- HTML
+- CSS 
+- JavaScript
+- Bootstrap 4
 
 
 ## User story
