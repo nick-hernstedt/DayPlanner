@@ -15,6 +15,7 @@ Just a simple day planner. It does the following:
 - CSS 
 - JavaScript
 - Bootstrap 4
+- Moment.js
 
 
 ## User story
